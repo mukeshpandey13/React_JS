@@ -1,28 +1,29 @@
-import React from 'react';
+import React from 'react'; 
+import { useState } from 'react'; // Import the useState hook
 
 const Home = () => {
-    const handleClick = () =>{
-        console.log("your click me");
-    }
+    // Declare a state variable `name` with initial value 'Mukesh'
+    // `setName` is the function used to update the `name` state
+    const [name, setName] = useState('ram krishna');
 
-    const handleClick2 = (name,e)=>{
-        console.log('hello'+ name,e.target);
-    }
-    // using event function 
-    const handleClick3 =(e)=>{
-        console.log('hello world', e);
-    }
+    // we can use use state in array, object
+    const[age,setAge] = useState(28);
+
+    // Function to handle button click
+    const handleClick = () => {
+        // Update the `name` state to 'lord krishna'
+        setName('Mukesh pandey');
+
+        setAge(26)
+    };
+
+
     return (
         <div className="home" id="home">
-            <h2>Home Page</h2>
+            <h2>HomePage</h2>
+            <p>{name} is {age} years old</p> {/* Display the name */}
             <button onClick={handleClick}>click me</button>
 
-{/* we use a anonymous here, we can use event 
-  */}
-            <button onClick={(e)=>{ handleClick2(' Mukesh',e);}}>Click me again</button>
-
-{/* we use event here  */}
-            <button onClick={handleClick3}>Event</button>
         </div>
 
     );
