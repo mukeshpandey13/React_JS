@@ -1,32 +1,61 @@
-.Navbar{
+.Navbar {
     background-color: #333;
     padding: 1rem;
 
-    /* it converts in column  */
-    display: flex; 
+    /* Arrange items in a row */
+    display: flex;
 
-    /* did gap in home and newblog  */
+    /* Add spacing between items */
     gap: 20px;
 
     border-radius: 25px;
+
+    /* Keep Navbar elements aligned as per original layout */
+    justify-content: flex-start; /* Default alignment to the left */
+    align-items: center;        /* Vertically center the items */
 }
 
-.Navbar a{
-    /* did home and newblog color white  */
+.Navbar a {
+    /* Set link text color to white */
     color: white;
 
+    /* Remove underline from links */
     text-decoration: none;
 
-    /* position melako  */
+    /* Add padding for clickable area */
     padding: 25px 30px;
 
-    /* home and newblog  */
+    /* Round the corners of the link background */
     border-radius: 5px;
 
+    /* Smooth transition for background color changes */
     transition: background-color 0.3s;
 }
 
-.Navbar a:hover{
+.Navbar a:hover {
+    /* Change background color on hover */
     background-color: #555;
 }
 
+.blog-preview {
+    padding: 10px 16px;
+    margin: 20px 0;
+    border-bottom: 1px solid #fff;
+
+    /* Center text within the blog-preview */
+    text-align: center;
+}
+
+.blog-preview:hover {
+    /* Add a box-shadow on hover */
+    box-shadow: 1px 3px 5px rgb(86, 69, 69), 1px 3px 5px rgb(40, 50, 40), 1px 3px 5px rgb(28, 28, 42);
+}
+
+.blog-preview h2 {
+    font-size: 20px;
+    color: #f1356d;
+    margin-bottom: 8px;
+
+    /* Center the heading text */
+    text-align: center;
+}

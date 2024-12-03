@@ -1,32 +1,43 @@
 import React from 'react'; 
-import { useState } from 'react'; // Import the useState hook
+import { useState } from 'react'; // Import the useState hook to manage state in a functional component
 
 const Home = () => {
-    // Declare a state variable `name` with initial value 'Mukesh'
-    // `setName` is the function used to update the `name` state
-    const [name, setName] = useState('ram krishna');
-
-    // we can use use state in array, object
-    const[age,setAge] = useState(28);
-
-    // Function to handle button click
-    const handleClick = () => {
-        // Update the `name` state to 'lord krishna'
-        setName('Mukesh pandey');
-
-        setAge(26)
-    };
-
+    // Initialize the `blogs` state with an array of blog objects using the `useState` hook
+    const [blogs, setBlogs] = useState([
+        { 
+            // we use object
+            title: 'My new website', // Title of the blog
+            body: 'lorem ipsum...',  // Placeholder content
+            author: 'Mukesh',        // Name of the blog author
+            id: '1'                  // Unique ID for each blog (important for mapping)
+        },
+        { 
+            title: 'Welcome party', 
+            body: 'lorem ipsum...', 
+            author: 'Marcus', 
+            id: '2' 
+        },
+        { 
+            title: 'Web dev tips', 
+            body: 'lorem ipsum...', 
+            author: 'Harry', 
+            id: '3' 
+        }
+    ]);
 
     return (
         <div className="home" id="home">
-            <h2>HomePage</h2>
-            <p>{name} is {age} years old</p> {/* Display the name */}
-            <button onClick={handleClick}>click me</button>
-
+            {/* Iterate over the `blogs` array using the `map` function to generate JSX for each blog */}
+            {blogs.map((blog) => (
+                <div className="blog-preview" key={blog.id}>
+                    {/* Display the blog title */}
+                    <h2>{blog.title}</h2>
+                    {/* Display the author of the blog */}
+                    <p>Written by {blog.author}</p>
+                </div>
+            ))}
         </div>
-
     );
-}
+};
 
-export default Home;
+export default Home; // Export the `Home` component to use in other parts of the application
