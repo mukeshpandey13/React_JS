@@ -1,8 +1,10 @@
 import React from 'react'; 
 import { useState } from 'react'; // Import the useState hook to manage state in a functional component
+import BlogList from './BLogList';
 
 const Home = () => {
     // Initialize the `blogs` state with an array of blog objects using the `useState` hook
+    //blogs is an array that contains multiple objects
     const [blogs, setBlogs] = useState([
         { 
             // we use object
@@ -27,15 +29,8 @@ const Home = () => {
 
     return (
         <div className="home" id="home">
-            {/* Iterate over the `blogs` array using the `map` function to generate JSX for each blog */}
-            {blogs.map((blog) => (
-                <div className="blog-preview" key={blog.id}>
-                    {/* Display the blog title */}
-                    <h2>{blog.title}</h2>
-                    {/* Display the author of the blog */}
-                    <p>Written by {blog.author}</p>
-                </div>
-            ))}
+           
+          <BlogList blogs={blogs} title="All blogs"/>
         </div>
     );
 };
