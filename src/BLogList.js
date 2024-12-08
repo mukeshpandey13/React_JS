@@ -1,4 +1,4 @@
-const BlogList = ({blogs,title}) => {
+const BlogList = ({blogs,title,btnHandler}) => {
 
     // use props in bloglist parameter 
     // const blogs = props.blogs;
@@ -17,6 +17,9 @@ const BlogList = ({blogs,title}) => {
 
                     {/* Display the author of the blog */}
                     <p>Written by {blog.author}</p>
+
+                    {/* to delete list  */}
+                    <button onClick={()=>btnHandler(blog.id)}>Delete</button>
                 </div>
             ))}
         </div>
