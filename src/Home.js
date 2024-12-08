@@ -33,11 +33,13 @@ const Home = () => {
     setBlogs(newblogs); // Update the state with the filtered blogs
   };
 
+  const [name,setName]= useState("Marcus");
+
   // useEffect
    useEffect(() => {
     console.log('use effect run')
-    console.log(blogs)
-  })
+    console.log(name)
+  },[name]);
 
   return (
     <div className="home" id="home">
@@ -46,6 +48,9 @@ const Home = () => {
         blogs={blogs.filter((blog) => blog.author == "Mukesh")}
         title="Mukesh blogs"
       /> */}
+
+      <h3>{name}</h3>
+      <button onClick={()=>setName("Mukesh pandey")}>Change Name</button>
     </div>
   );
 };
