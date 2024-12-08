@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react"; // Import the useState hook to manage state in a functional component
+import { useState,useEffect } from "react"; // Import the useState hook to manage state in a functional component
 import BlogList from "./BLogList";
 
 const Home = () => {
@@ -32,6 +32,12 @@ const Home = () => {
     const newblogs = blogs.filter((blog) => blog.id !== id); // Filter out the blog with the matching id
     setBlogs(newblogs); // Update the state with the filtered blogs
   };
+
+  // useEffect
+   useEffect(() => {
+    console.log('use effect run')
+    console.log(blogs)
+  })
 
   return (
     <div className="home" id="home">
