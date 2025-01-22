@@ -4,22 +4,32 @@ import BlogList from "./BLogList";
 
 const Home = () => {
   const [blogs, setBlogs] = useState(null);
+  
+  // data load huada loading... dikhau xa 
+  const [isPending, setIsPending] = useState(true);
 
   // useEffect
   useEffect(() => {
-    fetch("http://localhost:8000/blogs")
-      .then((res) => {
-        return res.json();
-      })
+    setTimeout(() => {
+      fetch("http://localhost:8000/blogs")
+        .then((res) => {
+          return res.json();
+        })
 
-      .then((data) => {
-        // console.log(data);
-        setBlogs(data);
-      });
+        .then((data) => {
+          // console.log(data);
+          setBlogs(data);
+
+          // setIspending must be false 
+          setIsPending(false);
+        });
+    }, 1000);
   }, []);
 
   return (
     <div className="home" id="home">
+      {isPending && <div>Lodaing...</div>}
+
       {blogs && <BlogList blogs={blogs} title="All blogs" />}
     </div>
   );
