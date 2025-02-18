@@ -5,7 +5,7 @@ import Home from "./Home";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Create from "./Create";
 
-const App =()=> {
+const App = () => {
   return (
     <Router>
       <div className="App">
@@ -14,8 +14,7 @@ const App =()=> {
 
         <div className="content">
           <Routes>
-            
-            <Route   path="/" element={<Home />} />
+            <Route path="/" element={<Home />} />
           </Routes>
           <Routes>
             <Route path="/create" element={<Create />} />
@@ -24,6 +23,6 @@ const App =()=> {
       </div>
     </Router>
   );
-}
+};
 
 export default App;
