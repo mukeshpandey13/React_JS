@@ -3,6 +3,7 @@ import Home from "./Home";
 
 // React Router v6 imports
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Create from "./Create";
 
 const App =()=> {
   return (
@@ -13,7 +14,11 @@ const App =()=> {
 
         <div className="content">
           <Routes>
-            <Route path="/" element={<Home />} />
+            
+            <Route   path="/" element={<Home />} />
+          </Routes>
+          <Routes>
+            <Route path="/create" element={<Create />} />
           </Routes>
         </div>
       </div>
