@@ -1,19 +1,23 @@
-import Navbar from './Navbar';
-import Home from './Home';
+import Navbar from "./Navbar";
+import Home from "./Home";
 
+// React Router v6 imports
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-function App() {
+const App =()=> {
   return (
-    <div className="App">
+    <Router>
+      <div className="App">
+        {/* Navbar is imported from Navbar.js */}
+        <Navbar />
 
-      {/* Navbar is imported from Navabar.js  */}
-      <Navbar/>
-
-      <div className="content">
-        <Home/>
+        <div className="content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </div>
       </div>
-
-    </div>
+    </Router>
   );
 }
 
