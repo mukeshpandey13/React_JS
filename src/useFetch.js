@@ -37,7 +37,7 @@ const useFetch = (url) => {
 
           setIsPending(false);
         });
-    }, 1000);
+    }, 100);
   }, [url]);
 
 

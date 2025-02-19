@@ -4,6 +4,7 @@ import Home from "./Home";
 // React Router v6 imports
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Create from "./Create";
+import BlogDetails from "./BlogDetails";
 
 const App = () => {
   return (
@@ -13,11 +14,15 @@ const App = () => {
         <Navbar />
 
         <div className="content">
+          {/* <Routes>
+            <Route path="/" element={<Home />} />
+          </Routes> */}
           <Routes>
             <Route path="/" element={<Home />} />
-          </Routes>
-          <Routes>
             <Route path="/create" element={<Create />} />
+
+            {/* #-25  */}
+            <Route path="/blog/:id" element={<BlogDetails />} />
           </Routes>
         </div>
       </div>

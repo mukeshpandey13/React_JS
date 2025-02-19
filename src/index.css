@@ -59,3 +59,6 @@
     /* Center the heading text */
     text-align: center;
 }
+.blog-preview a{
+    text-decoration: none;
+}
