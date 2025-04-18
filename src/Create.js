@@ -3,11 +3,19 @@ import { useState } from "react";
 const Create = () => {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
-  const [author, setAuthor] = useState("mario");
+  const [author, setAuthor] = useState("Mukesh");
+
+  const handleSubmit = (e) => {
+    e.preventDefault(); // it does not refresh fresh when Add Blog btn clicked 
+    const blog = { title, body, author }
+
+    console.log(blog)
+
+  }
   return (
     <div className="create">
       <h2>Add a New Blog</h2>
-      <form action="">
+      <form onSubmit={handleSubmit}>
         <label htmlFor="">Blog title</label>
         <input
           type="text"
@@ -25,15 +33,15 @@ const Create = () => {
 
         <label htmlFor="">Blog Aauthor:</label>
         <select value={author} onChange={(e) => setAuthor(e.target.value)}>
-          <option value="mario">Mario</option>
-          <option value="yoshi">Yoshi</option>
+          <option value="mario">Mukesh</option>
+          <option value="yoshi">Mahesh</option>
         </select>
 
         <button>Add Blog</button>
 
-        <p>{title}</p>
+        {/* <p>{title}</p>
         <p>{body}</p>
-        <p>{author}</p>
+        <p>{author}</p> */}
       </form>
     </div>
   );
