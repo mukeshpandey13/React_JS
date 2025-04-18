@@ -1,18 +1,22 @@
 {
-    "blogs": [
-        {
-            "title":"My First blogs",
-            "body":"why do we it?\nIt is a long established fact that a reader will be distracted",
-            "author": " Mukesh",
-            "id":1
-        },
-        {
-            "title":"Opening Party!",
-            "body":"why do we it?\nIt is a long established fact that a reader will be distracted",
-            "author": " Mahesh",
-            "id":2
-        }
-
-    ]
+  "blogs": [
+    {
+      "title": "My First blogs",
+      "body": "why do we it?\nIt is a long established fact that a reader will be distracted",
+      "author": " Mukesh",
+      "id": "1"
+    },
+    {
+      "title": "Opening Party!",
+      "body": "why do we it?\nIt is a long established fact that a reader will be distracted",
+      "author": " Mahesh",
+      "id": "2"
+    },
+    {
+      "id": "c497",
+      "title": "Automatic habits",
+      "body": "Atomic Habits emphasizes the power of making small, incremental changes to achieve significant results over time. James Clear argues that habits are the compound interest of self-improvement — even tiny daily improvements can lead to remarkable outcomes if sustained consistently. Rather than focusing solely on goals, the book stresses the importance of building effective systems. Clear introduces the Four Laws of Behavior Change to help form good habits: make it obvious, make it attractive, make it easy, and make it satisfying. These principles can be reversed to break bad habits.\n\nA key idea in the book is the concept of identity-based habits, where the focus shifts from what you want to achieve to the type of person you want to become. For example, instead of saying, \"I want to read more,\" you say, \"I am a reader.\" Every small habit is a vote for the person you want to become. Clear also emphasizes the importance of shaping your environment to support your habits, tracking progress, and not missing twice — acknowledging that failure can happen but consistency is key.\n\nUltimately, the book teaches that long-term success comes from refining your systems and committing to small improvements. As Clear puts it, \"You do not rise to the level of your goals. You fall to the level of your systems.\" Atomic Habits is a practical, science-backed guide to habit formation and personal transformation.",
+      "author": "Mukesh"
+    }
+  ]
 }
-

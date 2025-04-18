@@ -4,14 +4,23 @@ const Create = () => {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [author, setAuthor] = useState("Mukesh");
+  const [isPending, setIsPending] = useState(false);
 
   const handleSubmit = (e) => {
-    e.preventDefault(); // it does not refresh fresh when Add Blog btn clicked 
-    const blog = { title, body, author }
+    e.preventDefault(); // stops the form from refreshing the page (which is default behavior in HTML).
+    const blog = { title, body, author };
 
-    console.log(blog)
+    setIsPending(true);
 
-  }
+    fetch("http://localhost:8000/blogs", {
+      method: "POST",
+      headers: { "Conetent-Type": "application/json" },
+      body: JSON.stringify(blog),
+    }).then(() => {
+      console.log("new blog added");
+      setIsPending(false);
+    });
+  };
   return (
     <div className="create">
       <h2>Add a New Blog</h2>
@@ -33,11 +42,12 @@ const Create = () => {
 
         <label htmlFor="">Blog Aauthor:</label>
         <select value={author} onChange={(e) => setAuthor(e.target.value)}>
-          <option value="mario">Mukesh</option>
-          <option value="yoshi">Mahesh</option>
+          <option value="mukesh">Mukesh</option>
+          <option value="mahesh">Mahesh</option>
         </select>
 
-        <button>Add Blog</button>
+        {!isPending && <button>Add Blog</button>}
+        {isPending && <button disabled>Adding Blog...</button>}
 
         {/* <p>{title}</p>
         <p>{body}</p>
