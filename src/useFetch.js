@@ -1,4 +1,4 @@
-// it is custom hook
+// it is custom hook, it can be use again and again 
 import { useState, useEffect } from "react";
 
 const useFetch = (url) => {
