@@ -5,6 +5,7 @@ import Home from "./Home";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Create from "./Create";
 import BlogDetails from "./BlogDetails";
+import NotFound from "./NotFound";
 
 const App = () => {
   return (
@@ -23,6 +24,10 @@ const App = () => {
 
             {/* #-25  */}
             <Route path="/blog/:id" element={<BlogDetails />} />
+
+            {/* tutorial 32 */}
+            {/* So if a user navigates to a path like /randompage that doesn't exist in your app, this route will catch it. */}
+            <Route path="*" element={ <NotFound />} />
           </Routes>
         </div>
       </div>
