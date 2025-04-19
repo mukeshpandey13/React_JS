@@ -1,10 +1,13 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Create = () => {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [author, setAuthor] = useState("Mukesh");
   const [isPending, setIsPending] = useState(false);
+
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault(); // stops the form from refreshing the page (which is default behavior in HTML).
@@ -14,12 +17,16 @@ const Create = () => {
 
     fetch("http://localhost:8000/blogs", {
       method: "POST",
-      headers: { "Conetent-Type": "application/json" },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(blog),
     }).then(() => {
       console.log("new blog added");
       setIsPending(false);
+
+      // navigate(-1);
+      navigate('/')
     });
+
   };
   return (
     <div className="create">
@@ -58,3 +65,5 @@ const Create = () => {
 };
 
 export default Create;
+ 
+// number 2, 10, 27, and 28 is tutorial 30 
